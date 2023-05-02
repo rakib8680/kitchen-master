@@ -17,10 +17,10 @@ const Header = () => {
                         </h1>
                     </Link>
                     <div className="  ml-10">
-                        <NavLink to="/" className={({ isActive }) => (isActive ? 'font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4' : 'text-secondary')}>Home</NavLink>
-                        <NavLink to="/" className={({ isActive }) => (isActive ? 'font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4' : 'text-secondary')}>Recipes</NavLink>
-                        <NavLink to="/" className={({ isActive }) => (isActive ? 'font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4' : 'text-secondary')}>Login</NavLink>
-                        <NavLink to="/" className={({ isActive }) => (isActive ? 'font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4' : 'text-secondary')}>Register</NavLink>
+                        <NavLink to="/home" className={({ isActive }) => (isActive ? 'font-black text-xl text-primary hover:text-gray-500 transition-all duration-200 mr-4' : 'font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4')}>Home</NavLink>
+                        <NavLink to="/a" className={({ isActive }) => (isActive ? 'font-black text-xl text-primary hover:text-gray-500 transition-all duration-200 mr-4' : 'font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4')}>Recipes</NavLink>
+                        <NavLink to="/login" className={({ isActive }) => (isActive ? 'font-black text-xl text-primary hover:text-gray-500 transition-all duration-200 mr-4' : 'font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4')}>Login</NavLink>
+                        <NavLink to="/register" className={({ isActive }) => (isActive ? 'font-black text-xl text-primary hover:text-gray-500 transition-all duration-200 mr-4' : 'font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4')}>Register</NavLink>
 
                     </div>
                 </div>
