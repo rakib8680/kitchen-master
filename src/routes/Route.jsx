@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../../../../Milestone-10/Practice-Day-2/practice-auth/src/components/ErrorPage";
-import Home from "../components/Home";
+import Home from "../components/Home/Home";
 import HomeLayout from "../layouts/HomeLayout";
 
 
