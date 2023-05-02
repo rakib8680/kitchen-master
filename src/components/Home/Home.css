@@ -1,5 +1,5 @@
 .background {
-    background-image: url(../../../public/hero2.jpg);
+    background-image: url(/hero2.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;

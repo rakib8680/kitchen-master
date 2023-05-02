@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../public/logo.jpg'
 
 
 const Header = () => {
@@ -10,7 +9,7 @@ const Header = () => {
                 <div className="flex items-center justify-between md:px-14 flex-col md:flex-row">
                     <Link className='flex flex-col  items-center' to='/'>
                         <div className="flex-shrink-0">
-                            <img className="h-20 w-20 rounded-full" src={logo} alt="Kitchen Master Logo" />
+                            <img className="h-20 w-20 rounded-full" src='/logo.jpg' alt="Kitchen Master Logo" />
                         </div>
                         <h1 className='text-orange-400 font-black'>
                             Kitchen Master
