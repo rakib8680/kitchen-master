@@ -7,7 +7,7 @@ const RecipesDetails = ({ recipes }) => {
 
     const { name, ingredients, cooking_method, image } = recipes;
 
-
+    // disable button and toast 
     const handleDisable = (event) => {
         event.target.disabled = true;
         toast.success('Added to your favorite list')
@@ -15,7 +15,7 @@ const RecipesDetails = ({ recipes }) => {
 
     return (
         <div>
-            <div className="card lg:card-side backdrop-blur-2xl shadow-xl rounded-none  mx-auto py-2 px-1">
+            <div className="recipe-card-container">
                 <figure>
                     <div className="avatar ">
                         <div className="w-56 mask mask-hexagon ">
@@ -29,7 +29,7 @@ const RecipesDetails = ({ recipes }) => {
                     <p className='text-xs'><span className='font-bold text-secondary'>Cooking Method : </span>{cooking_method.slice(0, 250)}...</p>
                     <p className='flex items-center gap-1'><span className='font-bold text-secondary'>Ratings :</span> <FaStar className='inline' /><FaStar className='inline' /><FaStar className='inline' /><FaStarHalfAlt className='inline' /><FaRegStar className='inline' />3.5</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-xs btn-error" onClick={handleDisable} ><FaHeart /></button>
+                        <button className="btn btn-sm btn-error" onClick={handleDisable} ><FaHeart /></button>
                     </div>
                 </div>
             </div>

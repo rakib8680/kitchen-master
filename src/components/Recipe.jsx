@@ -10,8 +10,8 @@ const Recipe = () => {
 
     return (
         <div className='background flex'>
-            <div className='container mx-auto grid grid-cols-12 gap-12 items-center'>
-                <div className=' backdrop-blur-xl w-fit  py-5 px-8 flex flex-col col-span-4 rounded-md'>
+            <div className='recipe-container'>
+                <div className='chef-container'>
                     <div className="avatar">
                         <div className="w-72 mask mask-squircle mx-auto">
                             <img src={picture} />

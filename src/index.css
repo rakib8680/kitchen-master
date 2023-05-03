@@ -23,3 +23,15 @@
 .passive-nav{
     @apply font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4
 }
+
+.recipe-card-container{
+    @apply card lg:card-side backdrop-blur-2xl shadow-xl rounded-none  mx-auto py-2 px-1
+}
+
+.recipe-container{
+    @apply container mx-auto grid grid-cols-12 gap-12 items-center
+}
+
+.chef-container{
+    @apply backdrop-blur-xl w-fit  py-5 px-8 flex flex-col col-span-4 rounded-md
+}
