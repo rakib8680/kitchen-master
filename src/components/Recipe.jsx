@@ -9,7 +9,7 @@ const Recipe = () => {
     const { name, experience, likes, main_recipes, picture, recipes, bio } = singleData
 
     return (
-        <div className='background'>
+        <div className='background flex'>
             <div className='container mx-auto grid grid-cols-12 gap-12 items-center'>
                 <div className=' backdrop-blur-xl w-fit  py-5 px-8 flex flex-col col-span-4 rounded-md'>
                     <div className="avatar">
