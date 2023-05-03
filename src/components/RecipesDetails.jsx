@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaHeart, FaRegStar, FaStar, FaStarHalfAlt, } from 'react-icons/fa';
 
@@ -7,7 +7,11 @@ const RecipesDetails = ({ recipes }) => {
 
     const { name, ingredients, cooking_method, image } = recipes;
 
-    const notify = () => toast.success('Added to your favorite list');
+
+    const handleDisable = (event) => {
+        event.target.disabled = true;
+        toast.success('Added to your favorite list')
+    }
 
     return (
         <div>
@@ -25,7 +29,7 @@ const RecipesDetails = ({ recipes }) => {
                     <p className='text-xs'><span className='font-bold text-secondary'>Cooking Method : </span>{cooking_method.slice(0, 250)}...</p>
                     <p className='flex items-center gap-1'><span className='font-bold text-secondary'>Ratings :</span> <FaStar className='inline' /><FaStar className='inline' /><FaStar className='inline' /><FaStarHalfAlt className='inline' /><FaRegStar className='inline' />3.5</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-xs btn-error" onClick={notify} ><FaHeart /></button>
+                        <button className="btn btn-xs btn-error" onClick={handleDisable} ><FaHeart /></button>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@ const RecipesDetails = ({ recipes }) => {
                         border: '1px solid yellow',
                         padding: '16px',
                         color: 'white',
-                        blur : '2px',
+                        blur: '2px',
                         backgroundColor: 'darkGreen',
                     },
                 }}
