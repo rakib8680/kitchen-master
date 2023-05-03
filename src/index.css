@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.banner-title{
+    @apply md:w-[740px] backdrop-blur-lg md:text-8xl font-black md:ml-28 p-9 rounded-sm w-fit text-3xl;
+}
+
+.card-container{
+    @apply  bg-gradient-to-t from-warning via-secondary to-primary pt-20;
+}
+
+.header-container{
+    @apply flex items-center justify-between md:px-14 flex-col md:flex-row;
+}
+
+.active-nav{
+    @apply font-black text-xl text-primary hover:text-gray-500 transition-all duration-200 mr-4 ;
+}
+
+
+.passive-nav{
+    @apply font-black text-xl text-secondary hover:text-gray-500 transition-all duration-200 mr-4
+}

@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import ErrorPage from "../../../../Milestone-10/Practice-Day-2/practice-auth/src/components/ErrorPage";
+import Blog from "../components/Blog";
+import ErrorPage from "../components/ErrorPage";
 import Home from "../components/Home/Home";
 import Login from "../components/Login";
 import RecipesDetails from "../components/RecipesDetails";
@@ -28,6 +29,10 @@ const route = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path : 'blog',
+                element : <Blog></Blog>
             }
         ]
     },
