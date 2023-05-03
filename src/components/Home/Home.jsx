@@ -8,7 +8,6 @@ import './Home.css'
 const Home = () => {
 
     const allData = useLoaderData()
-    console.log(allData);
 
     return (
         <div>
@@ -16,7 +15,7 @@ const Home = () => {
                 <div className=" banner-title">
                     <h2 className='text-secondary'>Authentic Cuisine</h2>
                     <h2 className='text-primary'>Made entirely from scratch</h2>
-                    <button className='btn btn-warning btn-outline w-fit btn-sm md:btn-md'>About Us</button>
+                    <button className='btn btn-warning btn-outline w-fit btn-sm md:btn-md'>Order Now</button>
                 </div>
             </div>
             <div className='card-container'>

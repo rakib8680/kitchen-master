@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaBrain,FaHamburger,FaThumbsUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
 
     const { name, picture, experience, id, likes, recipes } = chef
-    console.log(chef)
     return (
         <div className="card md:w-96 md:glass border border-primary  mb-5 text-accent ">
             <figure className='h-[250px]'>
@@ -16,7 +16,7 @@ const Chef = ({ chef }) => {
                 <p className='font-normal flex items-center gap-2'><FaHamburger/>Recipes : {recipes}</p>
                 <p className='font-normal flex items-center gap-2'><FaThumbsUp/>Likes : {likes}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-accent">Learn now!</button>
+                    <Link className='btn btn-accent' to={`/recipe/${id}`}>View Recipes</Link>
                 </div>
             </div>
         </div>

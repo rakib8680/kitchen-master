@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 // import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
                         Email
                     </label>
                     <input
-                        className="shadow appearance-none border rounded py-2 px-3 w-[400px] text-black leading-tight focus:outline-none focus:shadow-outline-gray"
+                        className="shadow appearance-none border rounded py-2 px-3 md:w-[400px] w-full text-black leading-tight focus:outline-none focus:shadow-outline-gray"
                         id="email"
                         type="text"
                         name='email'

@@ -3,10 +3,12 @@ import Blog from "../components/Blog";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../components/Home/Home";
 import Login from "../components/Login";
+import Recipe from "../components/Recipe";
 import RecipesDetails from "../components/RecipesDetails";
 import Register from "../components/Register";
 import HomeLayout from "../layouts/HomeLayout";
 import LoginLayout from "../layouts/LoginLayout";
+import RecipeLayout from "../layouts/RecipeLayout";
 
 
 
@@ -47,6 +49,17 @@ const route = createBrowserRouter([
             }
         ]
     },
+    {
+        path: 'recipe',
+        element : <RecipeLayout></RecipeLayout>,
+        children : [
+            {
+                path: '/recipe/:id',
+                element:<Recipe></Recipe>,
+                loader : ({params})=>fetch(`http://localhost:5000/allData/${params.id}`)
+            }
+        ]
+    }
     
 
 ])
