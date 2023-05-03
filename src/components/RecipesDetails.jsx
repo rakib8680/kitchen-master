@@ -1,10 +1,13 @@
 import React from 'react';
-import { FaHeart, FaRegStar, FaStar, FaStarAndCrescent, FaStarHalf, FaStarHalfAlt, FaStarOfDavid } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
+import { FaHeart, FaRegStar, FaStar, FaStarHalfAlt, } from 'react-icons/fa';
 
 const RecipesDetails = ({ recipes }) => {
-    console.log(recipes);
 
-    const { name, cuisine, ingredients, cooking_method, image } = recipes;
+
+    const { name, ingredients, cooking_method, image } = recipes;
+
+    const notify = () => toast.success('Added to your favorite list');
 
     return (
         <div>
@@ -18,14 +21,25 @@ const RecipesDetails = ({ recipes }) => {
                 </figure>
                 <div className="card-body text-warning w-[100px]">
                     <h2 className="card-title text-3xl font-bold text-primary">{name}</h2>
-                    <p className='text-xs'><span className='font-bold text-secondary'>Ingredients : </span> {ingredients.slice(0, 100)}...</p>
-                    <p className='text-sm'><span className='font-bold text-secondary'>Cooking Method : </span>{cooking_method.slice(0, 250)}...</p>
-                    <p className='flex items-center gap-1'><span className='font-bold text-secondary'>Ratings :</span> <FaStar className='inline'/><FaStar className='inline'/><FaStar className='inline'/><FaStarHalfAlt className='inline'/><FaRegStar className='inline'/>3.5</p>
+                    <p className='text-sm'><span className='font-bold text-secondary'>Ingredients : </span> {ingredients.slice(0, 100)}...</p>
+                    <p className='text-xs'><span className='font-bold text-secondary'>Cooking Method : </span>{cooking_method.slice(0, 250)}...</p>
+                    <p className='flex items-center gap-1'><span className='font-bold text-secondary'>Ratings :</span> <FaStar className='inline' /><FaStar className='inline' /><FaStar className='inline' /><FaStarHalfAlt className='inline' /><FaRegStar className='inline' />3.5</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-xs btn-error "><FaHeart/></button>
+                        <button className="btn btn-xs btn-error" onClick={notify} ><FaHeart /></button>
                     </div>
                 </div>
             </div>
+            <Toaster
+                toastOptions={{
+                    style: {
+                        border: '1px solid yellow',
+                        padding: '16px',
+                        color: 'white',
+                        blur : '2px',
+                        backgroundColor: 'darkGreen',
+                    },
+                }}
+            />
         </div>
     );
 };

@@ -5,5 +5,7 @@ import './index.css'
 import route from './routes/Route'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
- <RouterProvider router={route} />
+
+    <RouterProvider router={route}>
+    </RouterProvider>
 )

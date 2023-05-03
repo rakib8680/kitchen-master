@@ -1,10 +1,10 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
+
 import Blog from "../components/Blog";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../components/Home/Home";
 import Login from "../components/Login";
 import Recipe from "../components/Recipe";
-import RecipesDetails from "../components/RecipesDetails";
 import Register from "../components/Register";
 import HomeLayout from "../layouts/HomeLayout";
 import LoginLayout from "../layouts/LoginLayout";
@@ -63,6 +63,7 @@ const route = createBrowserRouter([
     
 
 ])
+
 
 
 export default route;   

@@ -19,16 +19,16 @@ const Recipe = () => {
                     </div>
                     <div className='text-accent space-y-3 mt-3'>
                         <h1 className=' text-3xl font-bold'>{name}</h1>
-                        
+
                         <p className='font-normal text-sm opacity-80 flex items-center gap-2'>{bio}</p>
-                        <p className='font-normal flex items-center gap-2'><FaBrain /> Experience : {experience}years</p>
-                        <p className='font-normal flex items-center gap-2'><FaHamburger />Recipes : {recipes}</p>
-                        <p className='font-normal flex items-center gap-2'><FaThumbsUp />Likes : {likes}</p>
+                        <p className='font-normal flex items-center gap-2'><FaBrain /> Experience : {experience} years</p>
+                        <p className='font-normal flex items-center gap-2'><FaHamburger />Recipes : {recipes} Items</p>
+                        <p className='font-normal flex items-center gap-2'><FaThumbsUp />Likes : {likes}+</p>
                     </div>
                 </div>
                 <div className='col-span-8 '>
                     {
-                        main_recipes.map((recipes,i) => <RecipesDetails recipes={recipes} key={i}></RecipesDetails>)
+                        main_recipes.map((recipes, i) => <RecipesDetails recipes={recipes} key={i}></RecipesDetails>)
                     }
                 </div>
             </div>
