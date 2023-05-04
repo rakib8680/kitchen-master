@@ -16,7 +16,6 @@ const Login = () => {
         handleGoogleSignIn()
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
                 setSuccess('Account registered successfully')
                 navigate('/home')
             })
@@ -29,7 +28,6 @@ const Login = () => {
         handleGithubSignIn()
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
                 setSuccess('Account registered successfully')
                 navigate('/home')
             })

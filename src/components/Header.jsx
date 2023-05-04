@@ -5,7 +5,14 @@ import { AuthContext } from '../providers/AuthProvider';
 
 const Header = () => {
 
-    const {user} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    // sign out 
+    const handleSignOut = () => {
+        logOut()
+            .then(() => console.log('successfully logged out'))
+            .catch(err => console.log(err.message))
+    }
 
     return (
         <nav className="bg-black bg-opacity-90 shadow-md">
@@ -19,12 +26,25 @@ const Header = () => {
                             Kitchen Master
                         </h1>
                     </Link>
-                    <div className="ml-10 flex">
-                    <p className='text-secondary mr-8'>{user}</p>
+                    <div className="ml-10 flex items-center">
                         <NavLink to="/home" className={({ isActive }) => (isActive ? 'active-nav' : 'passive-nav')}>Home</NavLink>
                         <NavLink to="/blog" className={({ isActive }) => (isActive ? 'active-nav' : 'passive-nav')}>Blog</NavLink>
-                        <NavLink to="/login" className={({ isActive }) => (isActive ? 'active-nav' : 'passive-nav')}>Login</NavLink>
-                        <NavLink to="/register" className={({ isActive }) => (isActive ? 'active-nav' : 'passive-nav')}>Register</NavLink>
+                        {
+                            user ?
+                                <div className='flex'>
+                                    <button className='text-error font-black text-xl hover:text-rose-400 transition-all duration-200' onClick={handleSignOut}>LogOut</button>
+                                    <div className="avatar">
+                                        <div className="w-7 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ms-5 " title={user?.displayName}>
+                                            <img src={user?.photoURL} />
+                                        </div>
+                                    </div>
+                                </div>
+                                :
+                                <>
+                                    <NavLink to="/login" className={({ isActive }) => (isActive ? 'active-nav' : 'passive-nav')}>Login</NavLink>
+                                    <NavLink to="/register" className={({ isActive }) => (isActive ? 'active-nav' : 'passive-nav')}>Register</NavLink>
+                                </>
+                        }
                     </div>
                 </div>
             </div>

@@ -21,7 +21,6 @@ const Register = () => {
         handleGoogleSignIn()
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
                 setSuccess('Account registered successfully')
                 navigate('/home')
             })
@@ -35,7 +34,6 @@ const Register = () => {
         handleGithubSignIn()
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
                 setSuccess('Account registered successfully')
                 navigate('/home')
             })
