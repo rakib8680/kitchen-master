@@ -1,10 +1,14 @@
 import React from 'react';
+import Pdf from "react-to-pdf";
+
 
 const Blog = () => {
+    const ref = React.createRef();
+
     return (
-        <div className=''>
-            <div className='background !h-auto md:py-40'>
-                <div className='container mx-auto text-accent backdrop-blur-md bg-primary bg-opacity-20 p-4 md:ps-10 md:pe-28 md:py-10 rounded-md space-y-5 md:w-[1200px]'>
+        <div>
+            <div className='background !h-auto md:py-40' >
+                <div className='blog-container' ref={ref} >
                     <h1 className='text-5xl font-bold'>Latest Blogs</h1>
                     <div>
                         <h1 className='text-2xl mb-2 font-medium'>1. Difference between control and Uncontrolled component in react</h1>
@@ -22,6 +26,11 @@ const Blog = () => {
                         <h1 className='text-2xl mb-2 font-medium'>4. What is a custom hook, and why will you create a custom hook?</h1>
                         <p>Custom React JS hooks offer reusability as when a custom hook is created, it can be reused easily, which makes the code cleaner and reduces the time to write the code. It also enhances the rendering speed of the code as a custom hook does not need to be rendered again and again while rendering the whole code.</p>
                     </div>
+                    <Pdf targetRef={ref} filename="kitchen_master_blog.pdf">
+                        {({ toPdf }) => <button className='btn btn-secondary' onClick={toPdf}>Download PDF</button>}
+                    </Pdf>
+
+
                 </div>
             </div>
         </div>

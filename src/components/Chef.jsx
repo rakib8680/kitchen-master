@@ -9,7 +9,7 @@ const Chef = ({ chef }) => {
     return (
         <div className="card md:w-96 md:glass border border-primary  mb-5 text-accent ">
             <figure className='h-[250px]'>
-                <LazyLoad threshold={0.95} height={300}>
+                <LazyLoad threshold={0.8} height={300} offset={200} >
                     <img src={picture} />
                 </LazyLoad>
             </figure>

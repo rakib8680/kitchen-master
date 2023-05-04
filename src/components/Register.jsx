@@ -21,7 +21,6 @@ const Register = () => {
         setSuccess('')
         handleGoogleSignIn()
             .then(result => {
-                const loggedUser = result.user
                 setSuccess('Account registered successfully')
                 navigate(location?.state?.from.pathname || '/home')
 
@@ -35,7 +34,6 @@ const Register = () => {
         setSuccess('')
         handleGithubSignIn()
             .then(result => {
-                const loggedUser = result.user
                 setSuccess('Account registered successfully')
                 navigate(location?.state?.from.pathname || '/home')
 

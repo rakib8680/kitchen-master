@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
 
 
 
+
     // google signIn 
     const googleProvider = new GoogleAuthProvider()
     const handleGoogleSignIn = () => {
@@ -64,7 +65,6 @@ const AuthProvider = ({ children }) => {
     // set current user 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log(currentUser)
             setUser(currentUser)
             setLoading(false)
         })
@@ -81,7 +81,7 @@ const AuthProvider = ({ children }) => {
         registerUser,
         signInUser,
         loading,
-        updateUser
+        updateUser,
     }
 
     return (
