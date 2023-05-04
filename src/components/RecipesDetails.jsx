@@ -18,12 +18,12 @@ const RecipesDetails = ({ recipes }) => {
             <div className="recipe-card-container">
                 <figure>
                     <div className="avatar ">
-                        <div className="w-56 mask mask-hexagon ">
+                        <div className="md:w-56 w-72  mask mask-hexagon ">
                             <img src={image} />
                         </div>
                     </div>
                 </figure>
-                <div className="card-body text-warning w-[100px]">
+                <div className="card-body text-warning md:w-[100px]">
                     <h2 className="card-title text-3xl font-bold text-primary">{name}</h2>
                     <p className='text-sm'><span className='font-bold text-secondary'>Ingredients : </span> {ingredients.slice(0, 100)}...</p>
                     <p className='text-xs'><span className='font-bold text-secondary'>Cooking Method : </span>{cooking_method.slice(0, 250)}...</p>

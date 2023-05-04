@@ -13,11 +13,11 @@ const Recipe = () => {
     const { name, experience, likes, main_recipes, picture, recipes, bio } = singleData
 
     return (
-        <div className='background flex'>
+        <div className='background !h-auto py-32 flex'>
             <div className='recipe-container'>
                 <div className='chef-container'>
                     <div className="avatar">
-                        <div className="w-72 mask mask-squircle mx-auto">
+                        <div className="md:w-72  mask mask-squircle mx-auto">
                             <img src={picture} />
                         </div>
                     </div>
