@@ -9,6 +9,7 @@ import Register from "../components/Register";
 import HomeLayout from "../layouts/HomeLayout";
 import LoginLayout from "../layouts/LoginLayout";
 import RecipeLayout from "../layouts/RecipeLayout";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -18,7 +19,7 @@ const route = createBrowserRouter([
     {
         path: '/',
         element: <LoginLayout></LoginLayout>,
-        errorElement : <ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -33,8 +34,8 @@ const route = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path : 'blog',
-                element : <Blog></Blog>
+                path: 'blog',
+                element: <Blog></Blog>
             }
         ]
     },
@@ -45,22 +46,24 @@ const route = createBrowserRouter([
             {
                 path: '/home',
                 element: <Home></Home>,
-                loader : () => fetch('http://localhost:5000/allData')
+                loader: () => fetch('http://localhost:5000/allData')
             }
         ]
     },
     {
         path: 'recipe',
-        element : <RecipeLayout></RecipeLayout>,
-        children : [
+        element: <RecipeLayout></RecipeLayout>,
+        children: [
             {
                 path: '/recipe/:id',
-                element:<Recipe></Recipe>,
-                loader : ({params})=>fetch(`http://localhost:5000/allData/${params.id}`)
+                element: <PrivateRoute>
+                    <Recipe></Recipe>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
             }
         ]
     }
-    
+
 
 ])
 

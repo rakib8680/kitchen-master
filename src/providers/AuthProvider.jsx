@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../firebase.config';
 
 
@@ -22,25 +22,38 @@ const AuthProvider = ({ children }) => {
     // google signIn 
     const googleProvider = new GoogleAuthProvider()
     const handleGoogleSignIn = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     // github sign in 
     const githubProvider = new GithubAuthProvider()
     const handleGithubSignIn = () => {
+        setLoading(true);
         return signInWithPopup(auth, githubProvider)
     };
 
 
     // register with email and pass 
     const registerUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     };
 
 
     // sign in with email and pass
     const signInUser = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
+    };
+
+
+    // update profile 
+    const updateUser = (user,name, photo ) => {
+        return updateProfile(user, {
+            displayName: name,
+            photoURL: photo
+        })
     }
 
     // sign out 
@@ -53,6 +66,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             console.log(currentUser)
             setUser(currentUser)
+            setLoading(false)
         })
         return () => unsubscribe()
     }, []);
@@ -65,7 +79,9 @@ const AuthProvider = ({ children }) => {
         handleGithubSignIn,
         logOut,
         registerUser,
-        signInUser
+        signInUser,
+        loading,
+        updateUser
     }
 
     return (

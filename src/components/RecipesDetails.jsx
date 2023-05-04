@@ -29,7 +29,7 @@ const RecipesDetails = ({ recipes }) => {
                     <p className='text-xs'><span className='font-bold text-secondary'>Cooking Method : </span>{cooking_method.slice(0, 250)}...</p>
                     <p className='flex items-center gap-1'><span className='font-bold text-secondary'>Ratings :</span> <FaStar className='inline' /><FaStar className='inline' /><FaStar className='inline' /><FaStarHalfAlt className='inline' /><FaRegStar className='inline' />3.5</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-sm btn-error" onClick={handleDisable} ><FaHeart /></button>
+                        <button className="btn btn-sm btn-error disabled:cursor-not-allowed" onClick={handleDisable} ><FaHeart /></button>
                     </div>
                 </div>
             </div>

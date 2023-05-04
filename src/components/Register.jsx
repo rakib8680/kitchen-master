@@ -5,7 +5,7 @@ import { AuthContext } from '../providers/AuthProvider';
 const Register = () => {
     const navigate = useNavigate()
     // context api 
-    const { handleGoogleSignIn, handleGithubSignIn, registerUser } = useContext(AuthContext)
+    const { handleGoogleSignIn, handleGithubSignIn, registerUser, updateUser } = useContext(AuthContext)
 
     // error 
     const [error, setError] = useState('')
@@ -70,10 +70,14 @@ const Register = () => {
 
         // register new user 
         registerUser(email, password)
-            .then(() => {
+            .then((result) => {
                 setSuccess('Account registered successfully')
+                navigate('/home')
+                updateUser(result.user, name, photo)
             })
             .catch(error => setError(error.message))
+
+        
 
         form.reset()
 
