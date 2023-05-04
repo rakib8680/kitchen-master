@@ -52,7 +52,7 @@ const Login = () => {
                 setSuccess('Login successfully')
                 navigate(location?.state?.from.pathname || '/home')
             })
-            .catch(error => setError(error.message))
+            .catch(error => setError('Wrong email or password'));
     }
 
 

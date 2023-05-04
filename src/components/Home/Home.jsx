@@ -75,7 +75,7 @@ const Home = () => {
                     <a href="#item4" className="btn btn-xs btn-secondary">4</a>
                 </div>
                 <div className='container mx-auto mt-3'>
-                    <p className='text-lg font-semibold glass p-7 text-accent rounded-2xl'>
+                    <p className='md:text-lg md:font-semibold glass bg-primary p-7 text-accent rounded-2xl'>
                         1. <span className='text-xl font-black text-orange-700'>Butter Chicken:</span> This North Indian dish features tender pieces of chicken cooked in a creamy tomato-based sauce, flavored with spices like garam masala, cumin, and coriander. It's typically served with fluffy basmati rice and naan bread. <br />
 
                         2. <span className='text-xl font-black text-orange-700'>Chicken Biriyani:</span>  These popular snacks consist of crispy pastry shells filled with spiced potatoes, peas, and sometimes meat. They're usually fried or baked and served with a side of chutney for dipping. <br />
