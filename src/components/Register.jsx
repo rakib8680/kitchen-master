@@ -87,13 +87,13 @@ const Register = () => {
 
     return (
         <div className="flex justify-center items-center h-screen background ">
-            <form className="backdrop-blur-xl  shadow-md rounded px-14 pt-14 pb-6 space-y-5 mb-4" onSubmit={handleRegistration}>
+            <form className="backdrop-blur-xl  shadow-md rounded px-7 md:px-14 pt-5 md:pt-14 pb-6 md:space-y-5 mb-4" onSubmit={handleRegistration}>
                 <div className="mb-4">
-                    <label className="block text-white  font-bold mb-2 text-xl" htmlFor="email">
+                    <label className="block text-white  font-bold mb-2 md:text-xl" htmlFor="email">
                         Name
                     </label>
                     <input
-                        className="shadow  border rounded py-2 px-3 md:w-[400px] w-full text-black leading-tight "
+                        className="shadow  border text-sm md:text-base rounded py-1 md:py-2 px-3 md:w-[400px] w-full text-black leading-tight "
                         id="name"
                         type="text"
                         name='name'
@@ -101,11 +101,11 @@ const Register = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label className="block text-white  font-bold mb-2 text-xl" htmlFor="email">
+                    <label className="block text-white  font-bold mb-2 md:text-xl" htmlFor="email">
                         Email
                     </label>
                     <input
-                        className="shadow  border rounded py-2 px-3 md:w-[400px] w-full text-black leading-tight "
+                        className="shadow  border rounded text-sm md:text-base py-1 md:py-2 px-3 md:w-[400px] w-full text-black leading-tight "
                         id="email"
                         type="text"
                         name='email'
@@ -113,12 +113,12 @@ const Register = () => {
                         required
                     />
                 </div>
-                <div className="mb-6">
-                    <label className="block text-white text-xl font-bold mb-2" htmlFor="password">
+                <div className="mb-4">
+                    <label className="block text-white md:text-xl font-bold mb-2" htmlFor="password">
                         Password
                     </label>
                     <input
-                        className="shadow  border rounded w-full py-2 px-3 text-black mb-3 leading-tight "
+                        className="shadow  border rounded w-full text-sm md:text-base py-1 md:py-2 px-3 text-black mb-3 leading-tight "
                         id="password"
                         type="password"
                         name='password'
@@ -126,12 +126,12 @@ const Register = () => {
                         required
                     />
                 </div>
-                <div className="mb-6">
-                    <label className="block text-white text-xl font-bold mb-2" htmlFor="password">
+                <div className="mb-4">
+                    <label className="block text-white md:text-xl font-bold mb-2" htmlFor="password">
                         Photo URL
                     </label>
                     <input
-                        className="shadow  border rounded w-full py-2 px-3 text-black mb-3 leading-tight "
+                        className="shadow  border rounded w-full py-1 md:py-2 text-sm md:text-base px-3 text-black mb-3 leading-tight "
                         id="photo"
                         type="text"
                         name='photo'
@@ -140,7 +140,7 @@ const Register = () => {
                 </div>
                 <div className="flex items-center justify-between">
                     <button
-                        className="btn btn-info"
+                        className="btn btn-info btn-sm md:btn-md mb-4 md:mb-0"
 
                     >
                         Sign Up
@@ -149,14 +149,14 @@ const Register = () => {
                 <p className='text-red-400 '>{error}</p>
                 <p className='text-green-500 '>{success}</p>
                 <div className='flex flex-col gap-2'>
-                    <button className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
+                    <button className="group h-9 md:h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
  hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100" type='button' onClick={googleSignIn}>
                         <div className="relative flex items-center space-x-4 justify-center">
                             <img src="https://tailus.io/sources/blocks/social/preview/images/google.svg" className="absolute left-0 w-5" alt="google logo" />
                             <span className="block w-max font-semibold tracking-wide text-slate-400  text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">Continue with Google</span>
                         </div>
                     </button>
-                    <button className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
+                    <button className="group h-9 md:h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
  hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100" type='button' onClick={githubSignIn}>
                         <div className="relative flex items-center space-x-4 justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="absolute left-0 w-5 text-gray-700" viewBox="0 0 16 16">

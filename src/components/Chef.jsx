@@ -7,7 +7,7 @@ const Chef = ({ chef }) => {
 
     const { name, picture, experience, id, likes, recipes } = chef
     return (
-        <div className="card md:w-96 md:glass border border-primary  mb-5 text-accent ">
+        <div className="card md:w-96 glass border border-primary  mb-5 text-accent ">
             <figure className='h-[250px]'>
                 <LazyLoad threshold={0.8} height={300} offset={200} >
                     <img src={picture} />

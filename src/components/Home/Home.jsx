@@ -2,6 +2,10 @@ import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import Chef from '../Chef';
 import './Home.css'
+import image1 from '../../assets/biryani.jpg'
+import image2 from '../../assets/curry.jpg'
+import image3 from '../../assets/fritters.jpg'
+import image4 from '../../assets/lollypop.jpg'
 
 
 
@@ -61,16 +65,16 @@ const Home = () => {
                 <h1 className='md:text-5xl text-4xl text-center font-black text-orange-600 mb-10'>Featured Foods</h1>
                 <div className="carousel md:w-[500px] md:h-[350px] mx-auto">
                     <div id="item1" className="carousel-item w-full">
-                        <img src='http://www.indiancuisinerestaurant.com/img/curry.jpg' className="w-auto rounded-2xl" />
+                        <img src={image1} className="w-auto rounded-2xl" />
                     </div>
                     <div id="item2" className="carousel-item w-full">
-                        <img src="http://www.indiancuisinerestaurant.com/img/biryani.jpg" className="w-auto rounded-2xl" />
+                        <img src={image2} className="w-auto rounded-2xl" />
                     </div>
                     <div id="item3" className="carousel-item w-full">
-                        <img src="http://www.indiancuisinerestaurant.com/img/lollypop.jpg" className="w-auto rounded-2xl" />
+                        <img src={image3} className="w-auto rounded-2xl" />
                     </div>
                     <div id="item4" className="carousel-item w-full">
-                        <img src="http://www.indiancuisinerestaurant.com/img/fritters.jpg" className="w-auto rounded-2xl" />
+                        <img src={image4} className="w-auto rounded-2xl" />
                     </div>
                 </div>
                 <div className="flex justify-center w-full py-2 gap-2 mt-3 mb-6">
