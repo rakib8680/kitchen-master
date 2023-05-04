@@ -1,11 +1,15 @@
 import React from 'react';
 import { FaBrain, FaHamburger, FaThumbsUp } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import RecipesDetails from './RecipesDetails';
 
 const Recipe = () => {
 
     const singleData = useLoaderData()
+    const navigation = useNavigation()
+    if (navigation.state === 'loading') {
+        return <progress className="progress w-56"></progress>
+    }
     const { name, experience, likes, main_recipes, picture, recipes, bio } = singleData
 
     return (
