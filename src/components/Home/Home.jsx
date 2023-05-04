@@ -9,8 +9,9 @@ const Home = () => {
 
     const allData = useLoaderData()
     const navigation = useNavigation()
+    console.log(navigation.state);
     if (navigation.state === 'loading') {
-        return <progress className="progress w-56"></progress>
+        return <progress className="progress progress-primary w-56"></progress>
     }
 
     return (

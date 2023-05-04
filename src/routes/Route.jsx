@@ -46,7 +46,7 @@ const route = createBrowserRouter([
             {
                 path: '/home',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/allData')
+                loader: () => fetch('https://kitchen-master-server-rakib8680.vercel.app/allData')
             }
         ]
     },
@@ -59,7 +59,7 @@ const route = createBrowserRouter([
                 element: <PrivateRoute>
                     <Recipe></Recipe>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allData/${params.id}`)
+                loader: ({ params }) => fetch(`https://kitchen-master-server-rakib8680.vercel.app/allData/${params.id}`)
             }
         ]
     }
