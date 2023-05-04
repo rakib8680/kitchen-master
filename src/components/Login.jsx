@@ -6,44 +6,51 @@ import { AuthContext } from '../providers/AuthProvider';
 const Login = () => {
     const navigate = useNavigate()
     const [success, setSuccess] = useState('')
+    // error 
+    const [error, setError] = useState('')
 
     // context api 
-    const { handleGoogleSignIn, handleGithubSignIn } = useContext(AuthContext)
+    const { handleGoogleSignIn, handleGithubSignIn, signInUser } = useContext(AuthContext)
 
     // login with google 
     const googleSignIn = () => {
         setSuccess('')
+        setError('')
         handleGoogleSignIn()
-            .then(result => {
-                const loggedUser = result.user
+            .then(() => {
                 setSuccess('Account registered successfully')
                 navigate('/home')
             })
-            .catch(error => console.log(error.message))
+            .catch(error => setError(error.message))
     };
 
     // register with github 
     const githubSignIn = () => {
         setSuccess('')
+        setError('')
         handleGithubSignIn()
-            .then(result => {
-                const loggedUser = result.user
+            .then(() => {
                 setSuccess('Account registered successfully')
                 navigate('/home')
             })
-            .catch(error => console.log(error.message))
-    }
+            .catch(error => setError(error.message))
+    };
 
 
-
-
+    // sign in with email and pass 
     const handleSignIn = event => {
         event.preventDefault();
         setSuccess('')
+        setError('')
         const form = event.target
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+
+        signInUser(email, password)
+            .then(() => {
+                setSuccess('Login successfully')
+            })
+            .catch(error => setError(error.message))
     }
 
 
@@ -92,7 +99,8 @@ const Login = () => {
                         Sign up here.
                     </a>
                 </div>
-                <p className='text-green-500 relative top-5 text-center text-sm'>{success}</p>
+                <p className='text-green-500 '>{success}</p>
+                <p className='text-red-400 t'>{error}</p>
                 <div className='flex flex-col gap-2 pb-9'>
                     <button className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
  hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100" type='button' onClick={googleSignIn}>
