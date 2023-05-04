@@ -11,12 +11,11 @@ import image4 from '../../assets/lollypop.jpg'
 
 const Home = () => {
 
-    const allData = useLoaderData()
     const navigation = useNavigation()
-    console.log(navigation.state);
     if (navigation.state === 'loading') {
         return <progress className="progress progress-primary w-56"></progress>
     }
+    const allData = useLoaderData()
 
     return (
         <div>

@@ -1,16 +1,16 @@
 # BuildCareer Complete Repository
- Best Job Haunting platform for making your career successful.
+ Best Food website for Indian Cuisine.
 
 ## Live Link
-Hosted in =Firebase -> [Kitchen Master](https://build-career.surge.sh/)
+Hosted in =Firebase -> [Kitchen Master](https://kitchen-master-6d70d.web.app/home)
 
 
 ## About this site: 
-* This is an online job haunting site
-* We have a job category section and a featured job section
-* You can click on the job details button to see full details about that job
-* There you can see apply button, if you click on the apply button that job will be added to applied job Site.
-* We also have a blog page and a statistics page.
+* This is a food/cuisine website
+* In this site, you can find 6 of our best chef of India.
+* Every chef card has a view recipe button. If you click the button you will see chef details and 3 of his best recipes.
+* But before that you have to register/login to our site.Thus the recipe page is protected.
+* We also have a blog page.
 
 
 ## React Router Dom v6.4 
