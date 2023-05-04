@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
     const navigate = useNavigate()
+    const location = useLocation()
     // context api 
     const { handleGoogleSignIn, handleGithubSignIn, registerUser, updateUser } = useContext(AuthContext)
 
@@ -22,7 +23,8 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user
                 setSuccess('Account registered successfully')
-                navigate('/home')
+                navigate(location?.state?.from.pathname || '/home')
+
             })
             .catch(error => setError(error.message))
     };
@@ -35,7 +37,8 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user
                 setSuccess('Account registered successfully')
-                navigate('/home')
+                navigate(location?.state?.from.pathname || '/home')
+
             })
             .catch(error => setError(error.message))
     }
@@ -72,14 +75,14 @@ const Register = () => {
         registerUser(email, password)
             .then((result) => {
                 setSuccess('Account registered successfully')
-                navigate('/home')
                 updateUser(result.user, name, photo)
+                navigate(location?.state?.from.pathname || '/home')
             })
             .catch(error => setError(error.message))
 
-        
 
         form.reset()
+
 
     }
 

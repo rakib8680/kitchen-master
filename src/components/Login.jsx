@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 // import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate()
+    const location = useLocation()
     const [success, setSuccess] = useState('')
     // error 
     const [error, setError] = useState('')
@@ -19,7 +20,7 @@ const Login = () => {
         handleGoogleSignIn()
             .then(() => {
                 setSuccess('Account registered successfully')
-                navigate('/home')
+                navigate(location?.state?.from.pathname || '/home')
             })
             .catch(error => setError(error.message))
     };
@@ -31,7 +32,7 @@ const Login = () => {
         handleGithubSignIn()
             .then(() => {
                 setSuccess('Account registered successfully')
-                navigate('/home')
+                navigate(location?.state?.from.pathname || '/home')
             })
             .catch(error => setError(error.message))
     };
@@ -49,6 +50,7 @@ const Login = () => {
         signInUser(email, password)
             .then(() => {
                 setSuccess('Login successfully')
+                navigate(location?.state?.from.pathname || '/home')
             })
             .catch(error => setError(error.message))
     }

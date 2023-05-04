@@ -22,7 +22,7 @@ const Header = () => {
                         <div className="flex-shrink-0">
                             <img className="h-20 w-20 rounded-full" src='/logo.jpg' alt="Kitchen Master Logo" />
                         </div>
-                        <h1 className='text-orange-400 font-black'>
+                        <h1 className='text-primary font-black'>
                             Kitchen Master
                         </h1>
                     </Link>
@@ -34,7 +34,7 @@ const Header = () => {
                                 <div className='flex'>
                                     <button className='text-error font-black text-xl hover:text-rose-400 transition-all duration-200' onClick={handleSignOut}>LogOut</button>
                                     <div className="avatar">
-                                        <div className="w-7 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ms-5 " title={user?.displayName}>
+                                        <div className="w-7 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ms-5 tooltip tooltip-primary" data-tip={user?.displayName} title={user?.displayName}>
                                             <img src={user?.photoURL} />
                                         </div>
                                     </div>

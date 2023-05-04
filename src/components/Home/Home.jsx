@@ -18,6 +18,8 @@ const Home = () => {
                     <button className='btn btn-warning btn-outline w-fit btn-sm md:btn-md'>Order Now</button>
                 </div>
             </div>
+
+            {/* chef card  */}
             <div className='card-container'>
                 <h1 className='text-center text-accent font-black text-4xl md:text-6xl pb-12'>
                     Meet our Chef's
@@ -46,6 +48,42 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            {/* featured food  */}
+            <div className='bg-gradient-to-b from-warning  to-primary py-16 px-4 md:px-0'>
+                <h1 className='md:text-5xl text-4xl text-center font-black text-orange-600 mb-10'>Featured Foods</h1>
+                <div className="carousel md:w-[500px] md:h-[350px] mx-auto">
+                    <div id="item1" className="carousel-item w-full">
+                        <img src='http://www.indiancuisinerestaurant.com/img/curry.jpg' className="w-auto rounded-2xl" />
+                    </div>
+                    <div id="item2" className="carousel-item w-full">
+                        <img src="http://www.indiancuisinerestaurant.com/img/biryani.jpg" className="w-auto rounded-2xl" />
+                    </div>
+                    <div id="item3" className="carousel-item w-full">
+                        <img src="http://www.indiancuisinerestaurant.com/img/lollypop.jpg" className="w-auto rounded-2xl" />
+                    </div>
+                    <div id="item4" className="carousel-item w-full">
+                        <img src="http://www.indiancuisinerestaurant.com/img/fritters.jpg" className="w-auto rounded-2xl" />
+                    </div>
+                </div>
+                <div className="flex justify-center w-full py-2 gap-2 mt-3 mb-6">
+                    <a href="#item1" className="btn btn-secondary btn-xs">1</a>
+                    <a href="#item2" className="btn btn-xs btn-secondary">2</a>
+                    <a href="#item3" className="btn btn-xs btn-secondary">3</a>
+                    <a href="#item4" className="btn btn-xs btn-secondary">4</a>
+                </div>
+                <div className='container mx-auto mt-3'>
+                    <p className='text-lg font-semibold glass p-7 text-accent rounded-2xl'>
+                        1. <span className='text-xl font-black text-orange-700'>Butter Chicken:</span> This North Indian dish features tender pieces of chicken cooked in a creamy tomato-based sauce, flavored with spices like garam masala, cumin, and coriander. It's typically served with fluffy basmati rice and naan bread. <br />
+
+                        2. <span className='text-xl font-black text-orange-700'>Chicken Biriyani:</span>  These popular snacks consist of crispy pastry shells filled with spiced potatoes, peas, and sometimes meat. They're usually fried or baked and served with a side of chutney for dipping. <br />
+
+                        3. <span className='text-xl font-black text-orange-700'>Chicken Fry:</span>  Hailing from South India, this dish features a thin, crispy crepe made from fermented rice and lentil batter, stuffed with a spiced potato filling. It's often served with sambar (a lentil soup) and coconut chutney. <br />
+
+                        4. <span className='text-xl font-black text-orange-700'>Butter Chola:</span>  A favorite breakfast dish in North India, this spicy and tangy chickpea curry is served with fluffy deep-fried bread called bhature. It's a filling and hearty dish that's perfect for a weekend brunch. <br />
+                    </p>
                 </div>
             </div>
         </div>
