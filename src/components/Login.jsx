@@ -59,8 +59,8 @@ const Login = () => {
 
 
     return (
-        <div className="flex justify-center items-center h-screen background ">
-            <form className="backdrop-blur-xl  shadow-md rounded px-14 pt-14 space-y-6 mb-4" onSubmit={handleSignIn}>
+        <div className="flex justify-center items-center h-screen background p-2 md:p-0">
+            <form className="backdrop-blur-xl  shadow-md rounded px-11 md:px-14 pt-14 space-y-6 " onSubmit={handleSignIn}>
                 <div className="mb-4">
                     <label className="block text-white  font-bold mb-2 text-2xl" htmlFor="email">
                         Email

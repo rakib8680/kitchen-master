@@ -4,7 +4,7 @@
 
 
 .banner-title{
-    @apply md:w-[740px] backdrop-blur-lg md:text-8xl font-black md:ml-28 p-9 rounded-sm w-fit text-3xl;
+    @apply md:w-[740px] backdrop-blur-lg md:text-8xl font-black md:ml-28 p-9 rounded-sm w-full  text-4xl;
 }
 
 .card-container{
@@ -40,4 +40,12 @@
 
 .blog-container{
     @apply container mx-auto text-accent backdrop-blur-md bg-primary bg-opacity-20 p-4 md:ps-10 md:pe-28 md:py-10 rounded-md space-y-5 md:w-[1200px]
+}
+
+.log-out{
+    @apply text-error font-black text-xl hover:text-rose-400 transition-all duration-200
+}
+
+.user-profile{
+    @apply w-7 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ms-5 
 }

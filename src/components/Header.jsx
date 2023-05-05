@@ -20,21 +20,21 @@ const Header = () => {
                 <div className="header-container">
                     <Link className='flex flex-col  items-center' to='/home'>
                         <div className="flex-shrink-0">
-                            <img className="h-20 w-20 rounded-full" src='/logo.jpg' alt="Kitchen Master Logo" />
+                            <img className="md:h-20 md:w-20 h-16 w-16 rounded-full" src='/logo.jpg' alt="Kitchen Master Logo" />
                         </div>
-                        <h1 className='text-primary font-black'>
+                        <h1 className='text-primary font-black pb-4 md:pb-0'>   
                             Kitchen Master
                         </h1>
                     </Link>
-                    <div className="ml-10 flex items-center">
+                    <div className="ml-10 flex items-center md:gap-5">
                         <NavLink to="/home" className={({ isActive }) => (isActive ? 'active-nav' : 'passive-nav')}>Home</NavLink>
                         <NavLink to="/blog" className={({ isActive }) => (isActive ? 'active-nav' : 'passive-nav')}>Blog</NavLink>
                         {
                             user ?
                                 <div className='flex'>
-                                    <button className='text-error font-black text-xl hover:text-rose-400 transition-all duration-200' onClick={handleSignOut}>LogOut</button>
+                                    <button className='log-out' onClick={handleSignOut}>LogOut</button>
                                     <div className="avatar">
-                                        <div className="w-7 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ms-5 tooltip tooltip-primary" data-tip={user?.displayName} title={user?.displayName}>
+                                        <div className="user-profile"  title={user?.displayName}>
                                             <img src={user?.photoURL} />
                                         </div>
                                     </div>

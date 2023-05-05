@@ -86,8 +86,8 @@ const Register = () => {
 
 
     return (
-        <div className="flex justify-center items-center h-screen background ">
-            <form className="backdrop-blur-xl  shadow-md rounded px-7 md:px-14 pt-5 md:pt-14 pb-6 md:space-y-5 mb-4" onSubmit={handleRegistration}>
+        <div className="flex justify-center items-center h-screen background px-4 md:px-0">
+            <form className="backdrop-blur-xl  shadow-md rounded px-7 md:px-14 pt-5 md:pt-14 pb-6 md:space-y-5 mb-4 w-full md:w-fit" onSubmit={handleRegistration}>
                 <div className="mb-4">
                     <label className="block text-white  font-bold mb-2 md:text-xl" htmlFor="email">
                         Name

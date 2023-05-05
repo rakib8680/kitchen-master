@@ -34,7 +34,7 @@ const Home = () => {
                 <h1 className='text-center text-accent font-black text-4xl md:text-6xl pb-12'>
                     Meet our Chef's
                 </h1>
-                <div className='md:grid grid-cols-3 container mx-auto p-4 md:p-0'>
+                <div className='md:grid grid-cols-3 container mx-auto p-5 md:p-0'>
                     {
                         allData.map(chef => <Chef chef={chef} key={chef.id}></Chef>)
                     }
