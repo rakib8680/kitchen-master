@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaBrain, FaHamburger, FaThumbsUp } from 'react-icons/fa';
 import { useLoaderData, useNavigation } from 'react-router-dom';
+import { HashLoader } from 'react-spinners';
 import RecipesDetails from './RecipesDetails';
 
 const Recipe = () => {
@@ -8,7 +9,7 @@ const Recipe = () => {
     const singleData = useLoaderData()
     const navigation = useNavigation()
     if (navigation.state === 'loading') {
-        return <progress className="progress w-56"></progress>
+        return <div className='flex justify-center h-[80vh] items-center bg-primary'><HashLoader color="#e3ed4c" size={60} /></div>
     }
     const { name, experience, likes, main_recipes, picture, recipes, bio } = singleData
 

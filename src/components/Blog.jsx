@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigation } from 'react-router-dom';
+import { HashLoader } from 'react-spinners';
 import Pdf from "react-to-pdf";
 
 
 const Blog = () => {
+    const navigation = useNavigation()
+    if (navigation.state === 'loading') {
+        return <div className='flex justify-center h-[80vh] items-center bg-primary'><HashLoader color="#e3ed4c" size={60} /></div>
+    }
+
     const ref = React.createRef();
 
     return (

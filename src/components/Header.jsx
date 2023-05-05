@@ -18,7 +18,7 @@ const Header = () => {
         <nav className="bg-black bg-opacity-90 shadow-md">
             <div className=" py-3 px-4 sm:px-6 lg:px-8">
                 <div className="header-container">
-                    <Link className='flex flex-col  items-center' to='/'>
+                    <Link className='flex flex-col  items-center' to='/home'>
                         <div className="flex-shrink-0">
                             <img className="h-20 w-20 rounded-full" src='/logo.jpg' alt="Kitchen Master Logo" />
                         </div>

@@ -6,6 +6,7 @@ import image1 from '../../assets/biryani.jpg'
 import image2 from '../../assets/curry.jpg'
 import image3 from '../../assets/fritters.jpg'
 import image4 from '../../assets/lollypop.jpg'
+import { HashLoader } from 'react-spinners';
 
 
 
@@ -13,9 +14,10 @@ const Home = () => {
 
     const navigation = useNavigation()
     if (navigation.state === 'loading') {
-        return <progress className="progress progress-primary w-56"></progress>
+        return <div className='flex justify-center h-[80vh] items-center bg-primary'><HashLoader color="#e3ed4c" size={60} /></div>
     }
     const allData = useLoaderData()
+
 
     return (
         <div>
@@ -38,6 +40,8 @@ const Home = () => {
                     }
                 </div>
             </div>
+
+            {/* about us  */}
             <div className='bg-warning text-center py-16 '>
                 <div className='container mx-auto space-y-10' >
                     <h1 className='text-7xl font-black text-primary tracking-wide'>About Us</h1>
@@ -77,10 +81,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="flex justify-center w-full py-2 gap-2 mt-3 mb-6">
-                    <a href="#item1" className="btn btn-secondary btn-xs">1</a>
-                    <a href="#item2" className="btn btn-xs btn-secondary">2</a>
-                    <a href="#item3" className="btn btn-xs btn-secondary">3</a>
-                    <a href="#item4" className="btn btn-xs btn-secondary">4</a>
+                    <a href="#item1" className="btn btn-secondary btn-sm">1</a>
+                    <a href="#item2" className="btn btn-sm btn-secondary">2</a>
+                    <a href="#item3" className="btn btn-sm btn-secondary">3</a>
+                    <a href="#item4" className="btn btn-sm btn-secondary">4</a>
                 </div>
                 <div className='container mx-auto mt-3'>
                     <p className='md:text-lg md:font-semibold glass bg-primary p-7 text-accent rounded-2xl'>
