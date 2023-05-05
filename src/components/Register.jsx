@@ -1,16 +1,20 @@
 import React, { useContext, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useNavigation } from 'react-router-dom';
+import { HashLoader } from 'react-spinners';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
+    const navigation = useNavigation()
+    if (navigation.state === 'loading') {
+        return <div className='flex justify-center h-[80vh] items-center bg-primary'><HashLoader color="#e3ed4c" size={60} /></div>
+    }
+
     const navigate = useNavigate()
     const location = useLocation()
     // context api 
-    const { handleGoogleSignIn, handleGithubSignIn, registerUser, updateUser } = useContext(AuthContext)
-
+    const { handleGoogleSignIn, handleGithubSignIn, registerUser, updateUser, loading } = useContext(AuthContext)
     // error 
     const [error, setError] = useState('')
-
     // success 
     const [success, setSuccess] = useState('')
 
@@ -20,7 +24,7 @@ const Register = () => {
         setError('')
         setSuccess('')
         handleGoogleSignIn()
-            .then(result => {
+            .then(() => {
                 setSuccess('Account registered successfully')
                 navigate(location?.state?.from.pathname || '/home')
 
@@ -33,7 +37,7 @@ const Register = () => {
         setError('')
         setSuccess('')
         handleGithubSignIn()
-            .then(result => {
+            .then(() => {
                 setSuccess('Account registered successfully')
                 navigate(location?.state?.from.pathname || '/home')
 
@@ -50,6 +54,7 @@ const Register = () => {
         const password = form.password.value
         const name = form.name.value
         const photo = form.photo.value
+
 
 
         // password validation 

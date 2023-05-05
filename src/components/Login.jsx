@@ -1,9 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useNavigation } from 'react-router-dom';
+import { HashLoader } from 'react-spinners';
 import { AuthContext } from '../providers/AuthProvider';
 // import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigation = useNavigation()
+    if (navigation.state === 'loading') {
+        return <div className='flex justify-center h-[80vh] items-center bg-primary'><HashLoader color="#e3ed4c" size={60} /></div>
+    }
     const navigate = useNavigate()
     const location = useLocation()
     const [success, setSuccess] = useState('')

@@ -22,7 +22,7 @@ const Header = () => {
                         <div className="flex-shrink-0">
                             <img className="md:h-20 md:w-20 h-16 w-16 rounded-full" src='/logo.jpg' alt="Kitchen Master Logo" />
                         </div>
-                        <h1 className='text-primary font-black pb-4 md:pb-0'>   
+                        <h1 className='text-primary font-black pb-4 md:pb-0'>
                             Kitchen Master
                         </h1>
                     </Link>
@@ -34,7 +34,7 @@ const Header = () => {
                                 <div className='flex'>
                                     <button className='log-out' onClick={handleSignOut}>LogOut</button>
                                     <div className="avatar">
-                                        <div className="user-profile"  title={user?.displayName}>
+                                        <div className="cursor-pointer user-profile" title={user?.displayName}>
                                             <img src={user?.photoURL} />
                                         </div>
                                     </div>
